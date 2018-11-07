@@ -1,28 +1,28 @@
 version: "3"
 services:
   api1:
-    image: video-movies-api
+    image: api-dart
     container_name: video-movies-api1
     depends_on:
       - db
     networks:
       - net
   api2:
-    image: video-movies-api
+    image: api-dart
     container_name: video-movies-api2
     depends_on:
       - db
     networks:
       - net
   api3:
-    image: video-movies-api
+    image: api-dart
     container_name: video-movies-api3
     depends_on:
       - db
     networks:
       - net
   api4:
-    image: video-movies-api
+    image: api-dart
     container_name: video-movies-api4
     depends_on:
       - db
