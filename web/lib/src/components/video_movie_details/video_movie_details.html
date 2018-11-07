@@ -1,0 +1,46 @@
+<table>
+  <tr>
+    <th>Type</th>
+    <td>{{ details?.type?.json }}</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td>{{ details?.title }}</td>
+  </tr>
+  <tr>
+    <th>Release date</th>
+    <td>{{ details?.released | date:'shortDate'}}</td>
+  </tr>
+  <tr>
+    <th>Run time</th>
+    <td>{{ details?.runtime }}</td>
+  </tr>
+  <tr>
+    <th>Countries</th>
+    <td>{{ details?.countries?.join(', ') }}</td>
+  </tr>
+  <tr>
+    <th>Genres</th>
+    <td>{{ details?.genres?.join(', ') }}</td>
+  </tr>
+  <tr>
+    <th>Director</th>
+    <td>{{ details?.director }}</td>
+  </tr>
+  <tr>
+    <th>Writers</th>
+    <td>{{ details?.writers?.join(', ') }}</td>
+  </tr>
+  <tr>
+    <th>Actors</th>
+    <td>{{ details?.actors?.join(', ') }}</td>
+  </tr>
+  <tr>
+    <th>Plot</th>
+    <td>{{ details?.plot }}</td>
+  </tr>
+  <tr>
+    <th>Poster</th>
+    <td><img [src]="details?.poster" alt=""></td>
+  </tr>
+</table>

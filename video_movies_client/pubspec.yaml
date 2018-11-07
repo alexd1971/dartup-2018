@@ -1,0 +1,20 @@
+name: video_movies_client
+description: A starting point for Dart libraries or applications.
+# version: 1.0.0
+# homepage: https://www.example.com
+# author: Aleksey Danilevskiy <email@example.com>
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+
+dependencies:
+  rest_api_client:
+    git:
+      url: https://github.com/alexd1971/rest_api_client.git
+      ref: master
+  models:
+    path: ../models
+  path: ^1.6.2
+
+dev_dependencies:
+  test: ^1.0.0

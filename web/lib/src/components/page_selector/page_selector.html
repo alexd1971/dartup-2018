@@ -1,0 +1,20 @@
+<material-button  [disabled]="activePage == 1"
+                  clear-size
+                  (trigger)="previous()">
+                &lt;&lt;
+</material-button>
+
+<span [hidden]="firstVisiblePage == 1">...</span>
+
+<material-button  *ngFor="let page of pages"
+                  [class.active]="activePage == page"
+                  clear-size (trigger)="pageButtonClick(page)">
+                {{ page }}
+</material-button>
+
+<span [hidden]="lastVisiblePage == pageCount">...</span>
+
+<material-button  [disabled]="activePage == pageCount"
+                  clear-size (trigger)="next()">
+                &gt;&gt;
+</material-button>

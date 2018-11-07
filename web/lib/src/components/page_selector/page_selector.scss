@@ -1,0 +1,11 @@
+@import 'package:angular_components/css/material/material';
+@import 'package:angular_components/material_button/mixins';
+
+@mixin active-page($color, $bg-color) {
+  @include button-background-color('material-button.active', $bg-color);
+  @include button-color('material-button.active', $color)
+}
+
+:host {
+  @include active-page($mat-white, $mat-indigo);
+}

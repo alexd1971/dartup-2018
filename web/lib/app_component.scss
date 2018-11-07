@@ -1,0 +1,12 @@
+@import 'package:angular_components/css/material/material';
+
+.basic-dialog,
+.basic-scrolling-dialog,
+.max-height-dialog,
+.headered-dialog {
+  width: $mat-grid * 60;
+
+  [footer] material-button:not([disabled]) {
+    color: $mat-blue;
+  }
+}

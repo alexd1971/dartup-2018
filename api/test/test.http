@@ -1,0 +1,11 @@
+GET http://localhost:8008/videomovies?skip=10&limit=3
+
+###
+
+GET http://localhost:8008/videomovies/56918f5e24de1e0ce2dfcccd
+
+###
+GET http://localhost:8008/videomovies/count
+
+###
+GET http://localhost:8008/videomovies/tt0076759/details

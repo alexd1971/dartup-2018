@@ -1,0 +1,14 @@
+<div>
+  <material-expansionpanel  *ngFor="let movie of videoMovies"
+                            autoDismissable
+                            [name]="movie.title"
+                            [secondaryText]="movie.year.toString()"
+                            [alwaysHideExpandIcon]="true"
+                            [cancelDisplayed]="false"
+                            saveText="Close"
+                            (open)="details.load()">
+    <video-movie-details #details [imdbId]="movie.imdb"></video-movie-details>
+  </material-expansionpanel>
+  <br>
+  <page-selector (onPageSelected)="loadPage($event)"></page-selector>
+</div>

@@ -1,0 +1,15 @@
+plugins {
+    id 'war'
+    id 'org.gretty' version '2.2.0'
+}
+
+dependencies {    
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    compile 'org.mongodb:mongodb-driver-sync:3.8.2'
+}
+
+repositories {
+    jcenter()
+}

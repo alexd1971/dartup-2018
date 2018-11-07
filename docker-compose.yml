@@ -1,0 +1,56 @@
+version: "3"
+services:
+  api1:
+    image: video-movies-api
+    container_name: video-movies-api1
+    depends_on:
+      - db
+    networks:
+      - net
+  api2:
+    image: video-movies-api
+    container_name: video-movies-api2
+    depends_on:
+      - db
+    networks:
+      - net
+  api3:
+    image: video-movies-api
+    container_name: video-movies-api3
+    depends_on:
+      - db
+    networks:
+      - net
+  api4:
+    image: video-movies-api
+    container_name: video-movies-api4
+    depends_on:
+      - db
+    networks:
+      - net
+  db:
+    image: mongo:4.0
+    container_name: video-movies-db
+    networks:
+      - net
+    volumes:
+      - ./var/db:/data/db
+    ports:
+      - 27017:27017
+  nginx:
+    image: nginx:alpine
+    container_name: video-movies-nginx
+    depends_on:
+      - api1
+      - api2
+      - api3
+      - api4
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - net
+    ports:
+      - 8008:80
+networks:
+  net:
+    driver: 'bridge'

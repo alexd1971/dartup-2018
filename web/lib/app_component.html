@@ -1,0 +1,29 @@
+<header class="material-header">
+  <div class="material-header-row">
+    <material-icon icon="functions"></material-icon>
+    <span class="material-header-title">Video movies</span>
+    <div class="material-spacer"></div>
+    <material-button icon class="material-drawer-button" (trigger)="showBasicDialog = true">
+      <material-icon icon="info"></material-icon>
+    </material-button>
+  </div>
+</header>
+<modal [visible]="showBasicDialog">
+  <material-dialog class="basic-dialog">
+
+    <h1 header>About this application</h1>
+
+    <p>
+      This is the web app of full stack sample in Dart. It demonstrates using of common
+      packages at the browser-side.
+    </p>
+
+    <div footer>
+      <material-button autoFocus clear-size (trigger)="showBasicDialog = false">
+        Close
+      </material-button>
+    </div>
+
+  </material-dialog>
+</modal>
+<video-movies-list></video-movies-list>
