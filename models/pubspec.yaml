@@ -14,4 +14,4 @@ dependencies:
       ref: master
 
 dev_dependencies:
-  test: ^1.0.0
+  test: ^1.5.1

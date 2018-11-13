@@ -1,18 +1,20 @@
 import 'package:data_model/data_model.dart';
 
-class VideoMovie extends Model {
+class VideoMovie implements Model<MovieId> {
+
+  MovieId id;
   String title;
   int year;
   ImdbId imdb;
   VideoType type;
 
   VideoMovie({
-    MovieId id,
+    this.id,
     this.title,
     this.year,
     this.imdb,
     this.type
-  }): super(id);
+  });
 
   factory VideoMovie.fromJson(Map<String, dynamic> json) =>
     json == null ? null : VideoMovie(
@@ -23,15 +25,12 @@ class VideoMovie extends Model {
       type: VideoType(json['type'])
     ); 
 
-  Map<String, dynamic> get json =>
-    super.json
-      ..addAll({
+  Map<String, dynamic> get json => {
         'title': title,
         'year': year,
         'imdb': imdb.json,
         'type': type.json
-      })
-      ..removeWhere((key, value) => value == null);
+      }..removeWhere((key, value) => value == null);
 }
 
 class MovieId extends ObjectId {

@@ -1,7 +1,9 @@
 import 'package:data_model/data_model.dart';
 import 'video_movie.dart';
 
-class VideoMovieDetails extends Model {
+class VideoMovieDetails implements Model<VideoDetailsId> {
+
+  VideoDetailsId id;
   String title;
   int year;
   DateTime released;
@@ -17,7 +19,7 @@ class VideoMovieDetails extends Model {
   VideoType type;
 
   VideoMovieDetails({
-    VideoDetailsId id,
+    this.id,
     this.title,
     this.year,
     this.released,
@@ -31,7 +33,7 @@ class VideoMovieDetails extends Model {
     this.poster,
     this.imdb,
     this.type
-  }): super(id);
+  });
 
   factory VideoMovieDetails.fromJson(Map<String, dynamic> json) {
     if (json == null) return null;
@@ -54,7 +56,7 @@ class VideoMovieDetails extends Model {
   }
 
   @override
-  Map<String, dynamic> get json => super.json..addAll({
+  Map<String, dynamic> get json => {
     'title': title,
     'year': year,
     'released': released.toUtc(),
@@ -68,7 +70,7 @@ class VideoMovieDetails extends Model {
     'poster': poster,
     'imdb': imdb.json,
     'type': type
-  })..removeWhere((key, value) => value == null);
+  }..removeWhere((key, value) => value == null);
 }
 
 class ImdbData implements JsonEncodable {
