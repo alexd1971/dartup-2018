@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'video_movies_list.dart';
 import 'package:video_movies_client/video_movies_client.dart';
 import 'package:rest_api_client/rest_api_client.dart';
-import 'package:http/http.dart';
+import 'package:http/io_client.dart';
 
 class App extends StatelessWidget {
   @override
