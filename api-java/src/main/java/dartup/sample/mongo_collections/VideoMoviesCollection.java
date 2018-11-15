@@ -25,7 +25,9 @@ public class VideoMoviesCollection {
       Aggregates.addFields(
         new Field<Document>("id", new Document("$toString", "$_id"))
       ),
-      Aggregates.project(Projections.excludeId())
+      Aggregates.project(Projections.excludeId()),
+      Aggregates.skip(10),
+      Aggregates.limit(10)
     );
     return collection.aggregate(pipeline);
   }

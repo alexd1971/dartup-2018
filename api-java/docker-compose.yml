@@ -1,0 +1,14 @@
+version: "3"
+services:
+  api:
+    image: api-java
+    container_name: api-java
+    ports:
+      - 4444:8080
+    networks:
+      - net
+networks:
+  net:
+    external:
+      name: dartup_net
+  

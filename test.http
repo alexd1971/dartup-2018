@@ -1,4 +1,10 @@
-GET http://localhost:8008/videomovies?skip=10&limit=3
+GET http://localhost:3333/videomovies?skip=10&limit=10
+
+###
+GET http://localhost:5555/
+
+###
+GET http://localhost:4444/api-java/videomovies
 
 ###
 

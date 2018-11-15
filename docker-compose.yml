@@ -2,28 +2,28 @@ version: "3"
 services:
   api1:
     image: api-dart
-    container_name: video-movies-api1
+    container_name: api-dart1
     depends_on:
       - db
     networks:
       - net
   api2:
     image: api-dart
-    container_name: video-movies-api2
+    container_name: api-dart2
     depends_on:
       - db
     networks:
       - net
   api3:
     image: api-dart
-    container_name: video-movies-api3
+    container_name: api-dart3
     depends_on:
       - db
     networks:
       - net
   api4:
     image: api-dart
-    container_name: video-movies-api4
+    container_name: api-dart4
     depends_on:
       - db
     networks:
@@ -50,7 +50,7 @@ services:
     networks:
       - net
     ports:
-      - 8008:80
+      - 3333:80
 networks:
   net:
     driver: 'bridge'
