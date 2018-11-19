@@ -9,7 +9,7 @@ class VideoMoviesClient extends ResourceClient<VideoMovie> {
   VideoMoviesClient(ApiClient apiClient): super('videomovies', apiClient);
 
   @override
-  VideoMovie createObject(Map<String, dynamic> json) => VideoMovie.fromJson(json);
+  VideoMovie createModel(Map<String, dynamic> json) => VideoMovie.fromJson(json);
 
   @override
   Future<VideoMovie> create(VideoMovie movie, {Map<String, String> headers = const {}}) {
