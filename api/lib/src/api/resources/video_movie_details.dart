@@ -8,7 +8,7 @@ class VideoMovieDetails {
   VideoMovieDetailsCollection videoMovieDetailsCollection;
   VideoMovieDetails(this.videoMovieDetailsCollection);
 
-  @Get(path: '{imdbId}/details')
+  @Get()
   Future<models.VideoMovieDetails> find(String imdbId) async {
     mongo.SelectorBuilder query = mongo.where.eq('imdb.id', imdbId);
     final results = await videoMovieDetailsCollection.find(query).toList();

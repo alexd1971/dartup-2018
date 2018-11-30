@@ -9,27 +9,18 @@ class VideoMovie implements Model<MovieId> {
   VideoType type;
 
   VideoMovie({
-    this.id,
-    this.title,
-    this.year,
-    this.imdb,
-    this.type
+    this.id, this.title, this.year,
+    this.imdb, this.type
   });
 
   factory VideoMovie.fromJson(Map<String, dynamic> json) =>
     json == null ? null : VideoMovie(
-      id: MovieId(json['id']),
-      title: json['title'],
-      year: json['year'],
-      imdb: ImdbId(json['imdb']),
-      type: VideoType(json['type'])
+      id: MovieId(json['id']), title: json['title'], year: json['year'],
+      imdb: ImdbId(json['imdb']), type: VideoType(json['type'])
     ); 
 
   Map<String, dynamic> get json => {
-        'title': title,
-        'year': year,
-        'imdb': imdb.json,
-        'type': type.json
+        'title': title, 'year': year, 'imdb': imdb.json, 'type': type.json
       }..removeWhere((key, value) => value == null);
 }
 
@@ -44,8 +35,8 @@ class ImdbId extends ObjectId {
 }
 
 class VideoType implements JsonEncodable {
-
   static const movie = VideoType._('movie');
+  static const cartoon = VideoType._('cartoon');
 
   final String _type;
 

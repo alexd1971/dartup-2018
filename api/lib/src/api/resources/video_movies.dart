@@ -11,7 +11,7 @@ class VideoMovies {
 
   VideoMovies(this.videoMoviesCollection, this._videoMovieDetails);
 
-  @Get(path: '')
+  @Get(path: '') // /videomovies
   Future<List<VideoMovie>> find(int skip, int limit) {
     mongo.SelectorBuilder query = mongo.where;
     if (skip != null) query = query.skip(skip);
@@ -19,12 +19,12 @@ class VideoMovies {
     return videoMoviesCollection.find(query).toList();
   }
 
-  @Get(path: '{movieId}')
+  @Get(path: '{movieId}') // /videomovies/{movieId}
   Future<VideoMovie> findOne(String movieId) => videoMoviesCollection.findOne(MovieId(movieId));
 
-  @Get(path: 'count')
+  @Get(path: 'count') // /videomovies/count
   Future<int> count() => videoMoviesCollection.count();
 
-  @Resource()
+  @Resource(path: '{imdbId}/details') // /videomovies/{imdbId}/details
   resource.VideoMovieDetails get videoMovieDetails => _videoMovieDetails;
 }

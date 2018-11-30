@@ -28,7 +28,6 @@ main() async {
     address: InternetAddress.anyIPv4,
     port: 3333,
     handler: shelf.Pipeline()
-      .addMiddleware(HttpExceptionMiddleware())
       .addMiddleware(CorsHeadersMiddleware({
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Expose-Headers': 'Authorization, Content-Type',
@@ -36,6 +35,7 @@ main() async {
             'Authorization, Origin, X-Requested-With, Content-Type, Accept, Content-Disposition',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE'
       }))
+      .addMiddleware(HttpExceptionMiddleware())
       .addHandler(router.handler)
   );
 

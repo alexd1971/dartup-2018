@@ -14,20 +14,6 @@ services:
       - db
     networks:
       - net
-  api3:
-    image: api-dart
-    container_name: api-dart3
-    depends_on:
-      - db
-    networks:
-      - net
-  api4:
-    image: api-dart
-    container_name: api-dart4
-    depends_on:
-      - db
-    networks:
-      - net
   db:
     image: mongo:4.0
     container_name: video-movies-db
@@ -43,8 +29,6 @@ services:
     depends_on:
       - api1
       - api2
-      - api3
-      - api4
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
